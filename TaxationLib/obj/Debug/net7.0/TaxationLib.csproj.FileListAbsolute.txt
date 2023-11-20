@@ -1,0 +1,12 @@
+C:\Projects\dotNET\Taxation\TaxationLib\bin\Debug\net7.0\TaxationLib.deps.json
+C:\Projects\dotNET\Taxation\TaxationLib\bin\Debug\net7.0\TaxationLib.dll
+C:\Projects\dotNET\Taxation\TaxationLib\bin\Debug\net7.0\TaxationLib.pdb
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\TaxationLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\TaxationLib.AssemblyInfoInputs.cache
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\TaxationLib.AssemblyInfo.cs
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\TaxationLib.csproj.CoreCompileInputs.cache
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\TaxationLib.sourcelink.json
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\TaxationLib.dll
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\refint\TaxationLib.dll
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\TaxationLib.pdb
+C:\Projects\dotNET\Taxation\TaxationLib\obj\Debug\net7.0\ref\TaxationLib.dll

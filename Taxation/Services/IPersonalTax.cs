@@ -2,7 +2,7 @@
 {
     public interface IPersonalTax
     {
-        public decimal CalcualteTax(string postalCode, decimal income);
+        public decimal CalculateTax(string postalCode, decimal income);
 
     }
 }

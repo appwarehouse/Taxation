@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Calculate Tax";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" class="mt-4">
+    <div class="mb-3">
+        <label for="postalCode" class="form-label">Postal Code:</label>
+        <select id="postalCode" name="postalCode" class="form-select">
+            <option value="A100">A100</option>
+            <option value="1000">1000</option>
+            <option value="7000">7000</option>
+            <option value="7441">7441</option>
+        </select>
+        <span asp-validation-for="postalCode" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="annualIncome" class="form-label">Annual Income:</label>
+        <input type="text" id="annualIncome" name="annualIncome" class="form-control" data-type="currency" />
+        <span asp-validation-for="annualIncome" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+@if (Model.calculatedTax.HasValue)
+{
+    <div class="mt-4">
+        <h4>Results :</h4>
+        <div><strong>With a Postal Code :</strong> @Model.postalCode</div>
+        <div><strong>And an Annual Income of :</strong>R @Model.annualIncome.ToString("0.00")</div>
+        <div><strong>Caculated Tax is :</strong> R @Model.calculatedTax?.ToString("0.00")</div>
+    </div>
+}
+

@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxation", "Taxation\Taxation.csproj", "{9AF43350-2597-4CEE-881F-9DE3A6764433}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxation", "Taxation\Taxation.csproj", "{9AF43350-2597-4CEE-881F-9DE3A6764433}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxationUI", "TaxationUI\TaxationUI.csproj", "{CC43995D-6058-40A0-83B5-E3095EEC109C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxationLib", "TaxationLib\TaxationLib.csproj", "{9952F352-852D-4D37-B5E7-4DF8AA59AB6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxation.Tests", "Taxation.Tests\Taxation.Tests.csproj", "{3CD5529D-3600-476B-8D69-D0B34B7EE9C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{9AF43350-2597-4CEE-881F-9DE3A6764433}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AF43350-2597-4CEE-881F-9DE3A6764433}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AF43350-2597-4CEE-881F-9DE3A6764433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC43995D-6058-40A0-83B5-E3095EEC109C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC43995D-6058-40A0-83B5-E3095EEC109C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC43995D-6058-40A0-83B5-E3095EEC109C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC43995D-6058-40A0-83B5-E3095EEC109C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9952F352-852D-4D37-B5E7-4DF8AA59AB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9952F352-852D-4D37-B5E7-4DF8AA59AB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9952F352-852D-4D37-B5E7-4DF8AA59AB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9952F352-852D-4D37-B5E7-4DF8AA59AB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD5529D-3600-476B-8D69-D0B34B7EE9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD5529D-3600-476B-8D69-D0B34B7EE9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD5529D-3600-476B-8D69-D0B34B7EE9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD5529D-3600-476B-8D69-D0B34B7EE9C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

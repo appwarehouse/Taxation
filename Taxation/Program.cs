@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Taxation.Data;
+using Taxation.Repositories;
 using Taxation.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var conn = builder.Configuration.GetConnectionString("TaxationDBConnection");
 
 // Add services to the container.
 
@@ -9,6 +14,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IPersonalTax, TaxCalculator>();
+builder.Services.AddScoped<ITaxCalculationRepository, TaxCalculationsRepository>();
+builder.Services.AddDbContext<TaxationDBContext>(options =>
+        options.UseSqlServer(conn));
 
 var app = builder.Build();
 

@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Taxation.Models;
+using Taxation.Repositories;
 using Taxation.Services;
+using TaxationLib;
 
 
 namespace Taxation.Controllers
@@ -9,15 +12,26 @@ namespace Taxation.Controllers
     public class TaxCalculation : ControllerBase
     {
         private readonly IPersonalTax _personalTax;
-        public TaxCalculation(IPersonalTax personalTax)
+        private readonly ITaxCalculationRepository _taxCalculationRepository;
+        public TaxCalculation(IPersonalTax personalTax, ITaxCalculationRepository taxCalculationRepository)
         {
             _personalTax = personalTax; 
+            _taxCalculationRepository = taxCalculationRepository;
         }
 
-        [HttpGet("{postalCode}/{annualIncome}")]
-        public decimal Get(string postalCode, decimal annualIncome)
+        [HttpPost]
+        public async Task<ActionResult<decimal>> Post([FromBody] TaxCalculationRequest request)
         {
-            return _personalTax.CalcualteTax(postalCode, annualIncome);
+
+            var taxableAmount = _personalTax.CalculateTax(request.PostalCode, request.AnnualIncome);
+            var persisted = await _taxCalculationRepository.InsertAsync(new TaxCalculationRecord() 
+            { 
+                AnnualIncome = request.AnnualIncome, 
+                PostalCode = request.PostalCode, 
+                CalculatedTax=taxableAmount, 
+                CalculationDate = DateTime.UtcNow,
+            });
+            return Ok(taxableAmount);
         }
 
     }

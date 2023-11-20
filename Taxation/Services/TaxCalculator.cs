@@ -1,10 +1,11 @@
-﻿using Taxation.Models;
+﻿using System.Diagnostics;
+using Taxation.Models;
 
 namespace Taxation.Services
 {
     public class TaxCalculator : IPersonalTax
     {
-        public decimal CalcualteTax(string postalCode, decimal income)
+        public decimal CalculateTax(string postalCode, decimal income)
         {
             switch (postalCode)
             {
@@ -39,19 +40,22 @@ namespace Taxation.Services
                 new TaxRange { LowerBound = 171550, UpperBound = 372950, TaxRate = 0.33m },
                 new TaxRange { LowerBound = 372950, UpperBound = null, TaxRate = 0.35m }
             };
+
+
             decimal tax = incomeTaxRanges
-                .Where(range => income > range.LowerBound && (range.UpperBound == null || income <= range.UpperBound.Value))
+                .Where(range => income > range.LowerBound)
                 .Sum(range =>
                 {
                     decimal taxableAmount = range.UpperBound.HasValue
                         ? Math.Min(range.UpperBound.Value, income) - range.LowerBound
                         : income - range.LowerBound;
-
-                    return taxableAmount * range.TaxRate;
+                    var taxed = taxableAmount > 0 ? taxableAmount * range.TaxRate : 0;
+                    Debug.WriteLine($"Taxed: {taxed} on {taxableAmount}");
+                    return taxed;
                 });
 
             return tax;
-
+            
 
         }
     }
